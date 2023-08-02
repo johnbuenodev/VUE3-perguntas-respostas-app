@@ -1,6 +1,6 @@
 <template>
   <!-- como add uma imagem <img alt="Vue logo" src="./assets/logo.png"> -->
-  <ResultScore   />  
+  <ResultScore  :humanProps="this.humanScore" :machineProps="this.machineScore" />  
 
   <div style="width: 600px;border-top: 0.5px; border-style: solid; border-color: gray; margin-top: 16px;margin-left: auto; margin-right: auto;"></div>
   <!-- machineValue="5" -->
@@ -53,7 +53,9 @@ export default {
       allAnswer: undefined,
       responseQuestion: null,
       displayResult: '',
-      displayBoolean: null//undefined
+      displayBoolean: null,//undefined
+      humanScore: 0,
+      machineScore: 0
     }
   },
   components: {
@@ -134,11 +136,14 @@ type
         this.displayResult = "Resposta Correta! ";// + this.correctAnswer;
         this.displayBoolean = true;
         this.responseQuestion = null;
+        //this.humanScore = this.humanScore + 1;
+        this.humanScore++;
       } else {
         //alert("RESPOSTA ERRADA");
         this.displayResult = "Resposta errada! Opção correta: ";// + this.correctAnswer;
         this.displayBoolean = false;
         this.responseQuestion = null;
+        this.machineScore++;
       }
     },
     nextQuestion() {
