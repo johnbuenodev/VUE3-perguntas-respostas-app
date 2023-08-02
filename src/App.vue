@@ -1,7 +1,10 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <div style="display: flex; flex-direction: column;width: 600px; margin-top:60px; margin-left: auto;margin-right: auto;">
+  <!-- como add uma imagem <img alt="Vue logo" src="./assets/logo.png"> -->
+  <ResultScore   />  
+
+  <div style="width: 600px;border-top: 0.5px; border-style: solid; border-color: gray; margin-top: 16px;margin-left: auto; margin-right: auto;"></div>
+  <!-- machineValue="5" -->
+  <div style="display: flex; flex-direction: column;width: 600px; margin-top:20px; margin-left: auto;margin-right: auto;">
     <h1 v-html="this.question">
     </h1>
 
@@ -33,13 +36,14 @@
 
   </div>
   </div>
-
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+
+import ResultScore from './components/ResultScore.vue'; 
 
 export default {
+
   name: 'App',
   data() {
     return {
@@ -53,7 +57,7 @@ export default {
     }
   },
   components: {
-    // HelloWorld
+    ResultScore
   },
   methods: {
     getList() {
